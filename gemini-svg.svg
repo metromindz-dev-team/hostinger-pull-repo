@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Background Gradient (matches dark branding) -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0b111e"/>
+      <stop offset="100%" stop-color="#03060a"/>
+    </radialGradient>
+
+    <!-- Top & Outer Blue Gradient -->
+    <linearGradient id="blueLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0088ff"/>
+      <stop offset="100%" stop-color="#0052cc"/>
+    </linearGradient>
+
+    <!-- Deep Blue Shadow Layer -->
+    <linearGradient id="blueDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0055d4"/>
+      <stop offset="100%" stop-color="#002b80"/>
+    </linearGradient>
+
+    <!-- Bottom Blue Fold -->
+    <linearGradient id="blueBase" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0070f3"/>
+      <stop offset="100%" stop-color="#003d99"/>
+    </linearGradient>
+
+    <!-- Pin Gradient -->
+    <linearGradient id="pinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8c00"/>
+      <stop offset="100%" stop-color="#ff3b00"/>
+    </linearGradient>
+
+    <!-- Soft Drop Shadow for the Pin -->
+    <filter id="pinShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="3" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Optional Rounded Base Container (Great for browser tabs / app icons) -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+
+  <!-- Logo Mark Group -->
+  <g transform="translate(10, 0)">
+    <!-- Back / Depth Loop of the 'B' -->
+    <path d="M190 170 C190 120, 270 115, 335 155 C390 190, 400 270, 365 320 C340 360, 300 375, 250 375 Z" 
+          fill="url(#blueDark)"/>
+
+    <!-- Top Horizontal & Upper Loop -->
+    <path d="M100 100 L275 100 C345 100, 395 135, 395 205 C395 255, 355 285, 310 295 C250 255, 205 250, 100 250 Z" 
+          fill="url(#blueLight)"/>
+
+    <!-- Bottom Loop & Upward Fold -->
+    <path d="M100 280 C155 280, 210 290, 260 325 C330 370, 350 425, 270 425 L100 425 C100 370, 100 330, 100 280 Z" 
+          fill="url(#blueBase)"/>
+
+    <path d="M100 425 L270 425 C380 425, 410 330, 345 285 C310 320, 250 355, 175 355 L100 425 Z" 
+          fill="url(#blueLight)"/>
+
+    <!-- Location Pin -->
+    <g filter="url(#pinShadow)">
+      <path d="M185 170 C140 170, 105 205, 105 250 C105 295, 185 365, 185 365 C185 365, 265 295, 265 250 C265 205, 230 170, 185 170 Z" 
+            fill="url(#pinGrad)"/>
+      <!-- Pin Center Hole -->
+      <circle cx="185" cy="245" r="32" fill="#0b111e"/>
+    </g>
+  </g>
+</svg>
