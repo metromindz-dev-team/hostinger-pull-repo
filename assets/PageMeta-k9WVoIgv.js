@@ -1,0 +1,1 @@
+import{l as n,u as r,bu as c,r as m}from"./index-BRn-3DV9.js";const p=({title:a})=>{const t=n(),{user:s}=r(),e=t?.workspace?.name||s?.companyDetails?.name||s?.company?.name||c;return m.useEffect(()=>{const o=a?`${a} | ${e}`:e;document.title=o},[a,e]),null};export{p as P};
