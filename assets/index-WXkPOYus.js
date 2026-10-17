@@ -1,0 +1,1 @@
+import{j as r}from"./index-DOKAduLC.js";import o from"./index-_Uja6Tiv.js";import"./PageMeta-CSkUlBmP.js";import"./quill.snow-DDpYycjU.js";import"./uploadUrl-BZJu0Pni.js";function i(){return r.jsx(o,{})}export{i as default};
