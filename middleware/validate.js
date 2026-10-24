@@ -1,0 +1,4 @@
+import { ZodError } from "zod";
+import { fail } from "../utils/api.js";
+export const validate = (schema) => (req, _res, next) => { const result = schema.safeParse({ body: req.body, params: req.params, query: req.query }); if (!result.success) return next(fail(422, "Validation failed", result.error.flatten())); req.validated = result.data; next(); };
+export function errorHandler(err, _req, res, _next) { if (err instanceof ZodError) return res.status(422).json({ error: "Validation failed", details: err.flatten() }); if (err.name === "CastError") return res.status(400).json({ error: "Invalid resource id" }); if (err.code === 11000) return res.status(409).json({ error: "A record with that value already exists" }); console.error(err); return res.status(err.status || 500).json({ error: err.message || "Internal server error", details: err.details }); }
