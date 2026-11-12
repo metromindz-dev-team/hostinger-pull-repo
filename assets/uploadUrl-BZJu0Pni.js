@@ -1,0 +1,1 @@
+const c=t=>{if(!t)return null;if(t.startsWith("http")||t.startsWith("data:"))return t;const r="https://api.kaiggroup.com".trim().replace(/\/api\/?$/i,"").replace(/\/+$/,""),s=t.replace(/\\/g,"/"),a=s.startsWith("/")?s:`/${s}`;return`${r}${a}`};export{c as g};
